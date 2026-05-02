@@ -1,12 +1,11 @@
 @charset "UTF-8";
 
 :root {
-    --bg: #fbfaf7;
-    --ink: #1f2933;
-    --muted: #65717d;
-    --line: #e4e0d8;
-    --accent: #0b6b70;
-    --accent-soft: #eef6f5;
+    --bg: #ffffff;
+    --ink: #111827;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --accent: #1d3f6f;
 }
 
 * {
@@ -18,13 +17,13 @@ body {
     color: var(--ink);
     background: var(--bg);
     font-family: "Source Sans 3", "Kaiti SC", "KaiTi", sans-serif;
-    font-size: 17px;
-    line-height: 1.58;
+    font-size: 16px;
+    line-height: 1.65;
 }
 
 a {
     color: var(--accent);
-    font-weight: 600;
+    font-weight: 500;
     text-decoration: none;
 }
 
@@ -35,23 +34,25 @@ a:focus {
 }
 
 .page-shell {
-    width: min(860px, calc(100% - 36px));
+    width: min(780px, calc(100% - 40px));
     margin: 0 auto;
-    padding: 3.2rem 0 4rem;
+    padding: 3.5rem 0 5rem;
 }
+
+/* Profile */
 
 .profile-card {
     display: grid;
-    grid-template-columns: 96px 1fr auto;
-    gap: 1.2rem;
+    grid-template-columns: 88px 1fr auto;
+    gap: 1.4rem;
     align-items: center;
-    padding-bottom: 1.8rem;
-    border-bottom: 1px solid var(--line);
+    padding-bottom: 1.6rem;
+    border-bottom: 1px solid var(--ink);
 }
 
 .profile-photo {
-    width: 96px;
-    height: 96px;
+    width: 88px;
+    height: 88px;
     border-radius: 50%;
     object-fit: cover;
 }
@@ -59,105 +60,97 @@ a:focus {
 .profile-copy h1 {
     margin: 0;
     font-family: "Newsreader", "Kaiti SC", "KaiTi", serif;
-    font-size: clamp(2.15rem, 5vw, 3.1rem);
+    font-size: clamp(1.9rem, 4.5vw, 2.7rem);
     font-weight: 650;
     line-height: 1;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.025em;
 }
 
 .profile-copy h1 span {
     color: var(--muted);
-    font-size: 0.72em;
+    font-size: 0.68em;
     font-weight: 500;
 }
 
 .role {
-    margin: 0.45rem 0 0;
-    color: var(--ink);
-    font-size: 1.08rem;
-}
-
-.section-label {
-    margin: 0;
+    margin: 0.4rem 0 0;
     color: var(--muted);
-    font-size: 0.82rem;
-    font-weight: 650;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+    font-size: 0.95rem;
 }
 
 .social-links {
     display: flex;
-    gap: 0.4rem;
+    gap: 0.25rem;
 }
 
 .social-links a {
     display: grid;
-    width: 2.15rem;
-    height: 2.15rem;
+    width: 2rem;
+    height: 2rem;
     place-items: center;
-    border: 1px solid var(--line);
-    border-radius: 999px;
     color: var(--muted);
+    font-size: 1rem;
 }
 
 .social-links a:hover,
 .social-links a:focus {
-    border-color: var(--accent);
-    background: var(--accent-soft);
     color: var(--accent);
     text-decoration: none;
 }
+
+/* Content */
 
 .content {
     min-width: 0;
 }
 
 .hero {
-    padding: 1.7rem 0 0.2rem;
-}
-
-.hero h2,
-.section-heading h2 {
-    margin: 0;
-    font-family: "Newsreader", "Kaiti SC", "KaiTi", serif;
-    font-weight: 650;
-    letter-spacing: -0.025em;
+    padding: 1.8rem 0 0;
 }
 
 .hero h2 {
-    font-size: 1.65rem;
-    line-height: 1.05;
+    display: none;
 }
 
 .hero p:last-child {
-    max-width: 780px;
-    margin: 0.9rem 0 0;
-    color: #384653;
+    margin: 0;
+    font-size: 0.97rem;
+    line-height: 1.72;
+    color: var(--ink);
 }
 
+/* Sections */
+
 .section {
-    margin-top: 2.4rem;
+    margin-top: 2.8rem;
+}
+
+.section-label {
+    display: none;
 }
 
 .section-heading {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 1rem;
-    margin-bottom: 0.8rem;
-    padding-bottom: 0.45rem;
+    display: block;
+    margin-bottom: 0.85rem;
+    padding-bottom: 0.3rem;
     border-bottom: 1px solid var(--line);
 }
 
 .section-heading h2 {
-    font-size: 1.65rem;
-    line-height: 1.05;
+    margin: 0;
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 0.75rem;
+    font-weight: 650;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
 }
+
+/* News */
 
 .news-list {
     display: grid;
-    gap: 0.4rem;
+    gap: 0.45rem;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -165,15 +158,18 @@ a:focus {
 
 .news-list li {
     display: grid;
-    grid-template-columns: 6.2rem 1fr;
+    grid-template-columns: 5.5rem 1fr;
     gap: 1rem;
+    font-size: 0.94rem;
 }
 
 .news-list time {
     color: var(--muted);
-    font-weight: 650;
+    font-weight: 600;
     white-space: nowrap;
 }
+
+/* Publications */
 
 .publication-list {
     display: grid;
@@ -181,8 +177,8 @@ a:focus {
 
 .publication {
     display: grid;
-    grid-template-columns: 132px 1fr;
-    gap: 1rem;
+    grid-template-columns: 120px 1fr;
+    gap: 1.1rem;
     padding: 1rem 0;
     border-bottom: 1px solid var(--line);
 }
@@ -191,18 +187,23 @@ a:focus {
     padding-top: 0;
 }
 
+.publication:last-child {
+    border-bottom: none;
+}
+
 .publication img {
-    width: 132px;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
-    border-radius: 8px;
-    background: #ece8df;
+    width: 120px;
+    object-fit: contain;
+    border-radius: 3px;
+    background: #f3f4f6;
+    align-self: start;
 }
 
 .publication h3 {
-    margin: 0.14rem 0 0.18rem;
-    font-size: 1.12rem;
-    line-height: 1.22;
+    margin: 0.1rem 0 0.15rem;
+    font-size: 0.97rem;
+    font-weight: 600;
+    line-height: 1.35;
 }
 
 .authors,
@@ -214,8 +215,8 @@ a:focus {
 
 .authors {
     color: var(--muted);
-    font-size: 0.95rem;
-    line-height: 1.32;
+    font-size: 0.9rem;
+    line-height: 1.45;
 }
 
 .authors strong {
@@ -224,82 +225,71 @@ a:focus {
 }
 
 .venue {
-    color: #46525e;
-    font-size: 0.95rem;
+    color: var(--muted);
+    font-size: 0.9rem;
 }
 
 .note {
     display: inline-block;
-    margin-top: 0.25rem;
-    color: #9a4f1f;
-    font-size: 0.92rem;
+    margin-top: 0.2rem;
+    color: #7c2d12;
+    font-size: 0.85rem;
     font-weight: 650;
 }
 
 .pub-links {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.55rem;
-    margin-top: 0.38rem;
-    font-size: 0.93rem;
+    gap: 0;
+    margin-top: 0.35rem;
+    font-size: 0.88rem;
 }
 
 .pub-links a + a::before {
-    color: var(--line);
-    content: "";
+    content: "/";
+    color: var(--muted);
+    margin: 0 0.35rem;
+    font-weight: 400;
 }
+
+/* Service */
 
 .service-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2.2rem;
+    gap: 2.4rem;
 }
 
 .compact-list {
     margin: 0;
-    padding-left: 1.1rem;
-    color: #384653;
+    padding-left: 1rem;
+    font-size: 0.94rem;
 }
 
 .compact-list li + li {
     margin-top: 0.3rem;
 }
 
-@media (max-width: 760px) {
-    body {
-        font-size: 16px;
-    }
+/* Mobile */
 
+@media (max-width: 640px) {
     .page-shell {
-        width: min(100% - 28px, 860px);
-        padding: 1.4rem 0 3rem;
+        width: calc(100% - 32px);
+        padding: 1.8rem 0 3.5rem;
     }
 
     .profile-card {
-        grid-template-columns: 76px 1fr;
+        grid-template-columns: 72px 1fr;
         gap: 0.9rem;
     }
 
     .profile-photo {
-        width: 76px;
-        height: 76px;
+        width: 72px;
+        height: 72px;
     }
 
     .social-links {
         grid-column: 1 / -1;
-        flex-wrap: wrap;
-    }
-
-    .hero {
-        padding-top: 1.5rem;
-    }
-
-    .section-heading {
-        display: block;
-    }
-
-    .section-label {
-        margin-bottom: 0.12rem;
     }
 
     .news-list li,
@@ -313,6 +303,6 @@ a:focus {
     }
 
     .publication img {
-        width: min(100%, 210px);
+        width: min(100%, 180px);
     }
 }
