@@ -1,248 +1,318 @@
 @charset "UTF-8";
-/* CSS Document */
+
+:root {
+    --bg: #fbfaf7;
+    --ink: #1f2933;
+    --muted: #65717d;
+    --line: #e4e0d8;
+    --accent: #0b6b70;
+    --accent-soft: #eef6f5;
+}
+
+* {
+    box-sizing: border-box;
+}
 
 body {
-    font-family: 'Roboto', sans-serif,"kaiti";
-    font-size: medium;
-} 
-
-A:link {background: none; color: #1565C0; text-decoration: none; cursor: pointer;}
-A:visited {background: none; color: #1565C0; text-decoration: none; cursor: pointer;}
-A:hover {background: none; color: #1565C0; text-decoration: none; cursor: pointer;}
-A:active { background: none; color: #1565C0; background: none; cursor: pointer;}
-
-.global {
-width: 900px;
-height: 100%;
-margin-left: auto;
-margin-right: auto;
-background: white;
+    margin: 0;
+    color: var(--ink);
+    background: var(--bg);
+    font-family: "Source Sans 3", "Kaiti SC", "KaiTi", sans-serif;
+    font-size: 17px;
+    line-height: 1.58;
 }
 
-.global TD {
-vertical-align: top;
-}
-
-.colleft {
-width: 250px;
-color: inherit;
-font: normal 14px 'Roboto', sans-serif,"kaiti";
-border-right: 1px dotted dimgray;
-}
-
-.colright {
-width: 600px;
-padding: 10px 20px 20px 20px;
-background: transparent;
-color: inherit;
-text-align: justify;
-font: normal 14px 'Roboto', sans-serif,"kaiti";
-}
-
-p {
-font: normal 14px 'Roboto', sans-serif,"kaiti"
-}
-
-/*
- * Global resets
- *
- * Update the foundational and global aspects of the page.
- */
-
-html {
-    font-family: 'Roboto', sans-serif,"kaiti";
-}
-@media (min-width: 48em) {
-    html {
-        font-size: 16px;
-    }
-}
-@media (min-width: 58em) {
-    html {
-        font-size: 20px;
-    }
-}
-
-
-/*
- * Sidebar
- *
- * Flexible banner for housing site name, intro, and "footer" content. Starts
- * out above content in mobile and later moves to the side with wider viewports.
- */
-
-.sidebar {
-    text-align: center;
-    padding: 2rem 1rem;
-    margin-left: 2rem;
-    /* box-shadow: 0 0 8px 2px rgba(0, 0, 0, .5); */
-}
-@media (min-width: 48em) {
-    .sidebar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        width: 15rem;
-        text-align: left;
-    }
-}
-
-/* Sidebar links */
-.sidebar a {
-    color:#1565C0;
-}
-
-.sidebar h4 {
-    color: rgba(0,0,0,.54);
-}
-
-.sidebar ul {
-    list-style: none;
-    padding-left: 0em;
-}
-.sidebar li {
-    display: inline;
-}
-
-/* About section */
-.sidebar-about h1 {
-    color: #fff;
-    margin-top: 0;
-    font-family: 'Roboto', sans-serif,"kaiti";
-    font-size: 3.25rem;
-}
-
-/* Sidebar nav */
-.sidebar-nav {
-    margin-bottom: 1rem;
-}
-.sidebar-nav-item {
-    display: block;
-    line-height: 1.75;
-}
-a.sidebar-nav-item:hover,
-a.sidebar-nav-item:focus {
-    text-decoration: underline;
-}
-.sidebar-nav-item.active {
-    font-weight: bold;
-}
-
-.nav-button {
-    background-color: #1565C0; /* Green */
-    border: none;
-    color: white;
-    padding: 5px 0;
-    width: 130px;
-    text-align: center;
+a {
+    color: var(--accent);
+    font-weight: 600;
     text-decoration: none;
-    /*display: inline-block;*/
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-    font-family: 'Roboto', sans-serif,"kaiti";
 }
 
-.nav-button:hover {
-    box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24), 0 5px 5px 0 rgba(0,0,0,0.19);
+a:hover,
+a:focus {
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
 }
 
-.news-year {
-    vertical-align: top;
+.page-shell {
+    width: min(860px, calc(100% - 36px));
+    margin: 0 auto;
+    padding: 3.2rem 0 4rem;
 }
 
-.tn-img {
-    max-width: 128px;
-    max-height: 128px;
+.profile-card {
+    display: grid;
+    grid-template-columns: 96px 1fr auto;
+    gap: 1.2rem;
+    align-items: center;
+    padding-bottom: 1.8rem;
+    border-bottom: 1px solid var(--line);
 }
 
-.title {
-    font-weight: bold;
+.profile-photo {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
-.me {
-    color: #000000;
-    font-weight: bold;
+.profile-copy h1 {
+    margin: 0;
+    font-family: "Newsreader", "Kaiti SC", "KaiTi", serif;
+    font-size: clamp(2.15rem, 5vw, 3.1rem);
+    font-weight: 650;
+    line-height: 1;
+    letter-spacing: -0.03em;
 }
 
-/* .pub a { */
-    /* font-family: 'Roboto', sans-serif,"kaiti";
-    font-weight: bold; */
-    /* padding: 0.2em 0.3em; */
-    /* border: solid black ;
-    border-width: 3px;
-    border-radius: 5px;
-    background-color: #fff; */
-    /*border-style: solid;*/
-    /*border-color: black;*/
-    /*border-width: medium;*/
-/* } */
-
-.link {
-    padding-top: 0.2em;
-    font-size: 15px;
+.profile-copy h1 span {
+    color: var(--muted);
+    font-size: 0.72em;
+    font-weight: 500;
 }
 
-.journal {
+.role {
+    margin: 0.45rem 0 0;
+    color: var(--ink);
+    font-size: 1.08rem;
 }
 
-.journal-title {
-    font-style: italic;
+.section-label {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.82rem;
+    font-weight: 650;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
 }
 
-.journal-year {
+.social-links {
+    display: flex;
+    gap: 0.4rem;
 }
 
-.author {
-
+.social-links a {
+    display: grid;
+    width: 2.15rem;
+    height: 2.15rem;
+    place-items: center;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    color: var(--muted);
 }
 
-.link a:link {color: #1565C0; text-decoration: none; cursor: pointer;}
-.link a:visited {color: #1565C0; text-decoration: none; cursor: pointer;}
-.link a:hover {color: #1565C0; text-decoration: none; cursor: pointer;}
-.link a:active { color: #1565C0; background: none; cursor: pointer;}
-
-/* Sticky sidebar
- *
- * Add the `sidebar-sticky` class to the sidebar's container to affix it the
- * contents to the bottom of the sidebar in tablets and up.
- */
-
-@media (min-width: 48em) {
-    .sidebar-sticky {
-        position: absolute;
-        right:  1rem;
-        bottom: 1rem;
-        left:   1rem;
-    }
+.social-links a:hover,
+.social-links a:focus {
+    border-color: var(--accent);
+    background: var(--accent-soft);
+    color: var(--accent);
+    text-decoration: none;
 }
-
-
-/* Container
- *
- * Align the contents of the site above the proper threshold with some margin-fu
- * with a 25%-wide `.sidebar`.
- */
 
 .content {
-    padding-top:    1rem;
-    padding-bottom: 1rem;
+    min-width: 0;
 }
 
-@media (min-width: 48em) {
-    .content {
-        max-width: 38rem;
-        margin-left: 20rem;
-        margin-right: 2rem;
+.hero {
+    padding: 1.7rem 0 0.2rem;
+}
+
+.hero h2,
+.section-heading h2 {
+    margin: 0;
+    font-family: "Newsreader", "Kaiti SC", "KaiTi", serif;
+    font-weight: 650;
+    letter-spacing: -0.025em;
+}
+
+.hero h2 {
+    font-size: 1.65rem;
+    line-height: 1.05;
+}
+
+.hero p:last-child {
+    max-width: 780px;
+    margin: 0.9rem 0 0;
+    color: #384653;
+}
+
+.section {
+    margin-top: 2.4rem;
+}
+
+.section-heading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.45rem;
+    border-bottom: 1px solid var(--line);
+}
+
+.section-heading h2 {
+    font-size: 1.65rem;
+    line-height: 1.05;
+}
+
+.news-list {
+    display: grid;
+    gap: 0.4rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.news-list li {
+    display: grid;
+    grid-template-columns: 6.2rem 1fr;
+    gap: 1rem;
+}
+
+.news-list time {
+    color: var(--muted);
+    font-weight: 650;
+    white-space: nowrap;
+}
+
+.publication-list {
+    display: grid;
+}
+
+.publication {
+    display: grid;
+    grid-template-columns: 132px 1fr;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.publication:first-child {
+    padding-top: 0;
+}
+
+.publication img {
+    width: 132px;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 8px;
+    background: #ece8df;
+}
+
+.publication h3 {
+    margin: 0.14rem 0 0.18rem;
+    font-size: 1.12rem;
+    line-height: 1.22;
+}
+
+.authors,
+.venue,
+.note,
+.pub-links {
+    margin: 0;
+}
+
+.authors {
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.32;
+}
+
+.authors strong {
+    color: var(--ink);
+    font-weight: 650;
+}
+
+.venue {
+    color: #46525e;
+    font-size: 0.95rem;
+}
+
+.note {
+    display: inline-block;
+    margin-top: 0.25rem;
+    color: #9a4f1f;
+    font-size: 0.92rem;
+    font-weight: 650;
+}
+
+.pub-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin-top: 0.38rem;
+    font-size: 0.93rem;
+}
+
+.pub-links a + a::before {
+    color: var(--line);
+    content: "";
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.2rem;
+}
+
+.compact-list {
+    margin: 0;
+    padding-left: 1.1rem;
+    color: #384653;
+}
+
+.compact-list li + li {
+    margin-top: 0.3rem;
+}
+
+@media (max-width: 760px) {
+    body {
+        font-size: 16px;
     }
-}
 
-@media (min-width: 64em) {
-    .content {
-        margin-left: 22rem;
-        margin-right: 4rem;
+    .page-shell {
+        width: min(100% - 28px, 860px);
+        padding: 1.4rem 0 3rem;
+    }
+
+    .profile-card {
+        grid-template-columns: 76px 1fr;
+        gap: 0.9rem;
+    }
+
+    .profile-photo {
+        width: 76px;
+        height: 76px;
+    }
+
+    .social-links {
+        grid-column: 1 / -1;
+        flex-wrap: wrap;
+    }
+
+    .hero {
+        padding-top: 1.5rem;
+    }
+
+    .section-heading {
+        display: block;
+    }
+
+    .section-label {
+        margin-bottom: 0.12rem;
+    }
+
+    .news-list li,
+    .publication,
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .news-list li {
+        gap: 0;
+    }
+
+    .publication img {
+        width: min(100%, 210px);
     }
 }
